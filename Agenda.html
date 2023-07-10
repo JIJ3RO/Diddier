@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Bootstrap import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Incluir la biblioteca de datepicker de jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Incluir la biblioteca FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+        background-image: url('img/WhatsApp\ Image\ 2023-07-05\ at\ 20.36.18.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <a href="home.html">
+        <img src="img/WhatsApp Image 2023-07-05 at 20.36.18 (1).jpg" alt="Logo de la empresa" class="logo">
+    </a>
+    <div class="search-bar">
+        <form>
+            <input type="text" name="search" placeholder="Buscar">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+
+    <div class="about-us">
+        <a href="about.html">About Us</a>
+    </div>
+    <div class="container white">
+        <div class="row">
+            <input type="text" name="" class="datepicker" id="fecha" placeholder="Seleccionar fecha">
+            <div class="row">
+                <select id="hora-cita">
+                    <option value="05:00">05:00</option>
+                    <option value="06:00">06:00</option>
+                    <option value="07:00">07:00</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                    <option value="21:00">21:00</option>
+                    <option value="22:00">22:00</option>
+                </select>
+            </div>
+        </div>
+        <button id="confirmar-btn" class="confirmar-btn">Confirmar cita</button>
+        <div id="aviso-cita" class="aviso-cita"></div>
+        </div>
+    </div>
+    <div class="social-icons">
+        <a href="https://accounts.google.com/" class="social-icon"><i class="fab fa-google"></i></a>
+        <a href="https://es-la.facebook.com/login/device-based/regular/login/" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://support.apple.com/es-lamr/HT204053" class="social-icon"><i class="fab fa-apple"></i></a>
+    </div>
+</body>
+<script src="./js/script.js"></script>
+</html>
