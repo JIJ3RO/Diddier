@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  background-image: url("Fondo.jpg");
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #00000000;
+  color: #0097B2;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #000000;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+}
+
+a:hover {
+  color: #000000;
+}
+
+.form-group label i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Estilos específicos para el icono de usuario */
+.form-group label .fa-user {
+  color: #0097B2;
+}
+
+/* Estilos específicos para el icono de correo electrónico */
+.form-group label .fa-envelope {
+  color: #0097B2;
+}
+
+/* Estilos específicos para el icono de contraseña */
+.form-group label .fa-lock {
+  color: #0097B2;
+}
+.social-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #0097B2;
+  line-height: 40px;
+  color: #fff;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #ffffff;
+}
