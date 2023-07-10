@@ -1,26 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <img src="Logo.png" alt="Logo de la clínica" style="display: block; margin: 0 auto;">
-    <h1>Login</h1>
-    <form action="PRUEBA.HTML">
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-      </div>
-      <button type="submit" class="btn">Login</button>
-    </form>
-    <p>Don't have an account?<a href="REGISTRO.html"> Create an account</a></p>
-  </div>
+    <div class="header">
+        <h1 class="header-text">Clinica</h1>
+    </div>
+
+    <div class="menu">
+        <button class="menu-button">Inicio</button>
+        <button class="menu-button">Agenda</button>
+        <button class="menu-button" onclick="scrollToLocation('#ubicacion')">Ubicación</button>
+        <button class="menu-button">Información</button>
+    </div>
+
+    <div class="slide">
+        <div class="slide-inner">
+            <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
+            <div class="slide-item">
+                <img src="image1.jpg">
+            </div>
+            <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="image2.jpg">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="image3.jpg">
+            </div>
+            <label for="slide-3" class="slide-control prev control-1">‹</label>
+            <label for="slide-2" class="slide-control next control-1">›</label>
+            <label for="slide-1" class="slide-control prev control-2">‹</label>
+            <label for="slide-3" class="slide-control next control-2">›</label>
+            <label for="slide-2" class="slide-control prev control-3">‹</label>
+            <label for="slide-1" class="slide-control next control-3">›</label>
+        </div>
+    </div>
+
+    <div class="slide-indicator">
+        <label for="slide-1" class="slide-indicator-item"></label>
+        <label for="slide-2" class="slide-indicator-item"></label>
+        <label for="slide-3" class="slide-indicator-item"></label>
+    </div>
+    
+    <div class="button-container">
+        <button class="button-agendar" onclick="openNuevaPagina()">Seleccionar Procedimiento</button>
+    </div>
+
+
+    <div class="section" id="ubicacion">
+        <h2 class="section-title">Ubicación</h2>
+        <div id="map-container-google-1" class="map-container">
+            <iframe src="https://maps.google.com/maps?q=manhattan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function scrollToLocation(location) {
+            document.querySelector(location).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function openNuevaPagina() {
+            window.open("nueva_pagina.html", "_blank");
+        }
+    </script>
 </body>
 </html>
