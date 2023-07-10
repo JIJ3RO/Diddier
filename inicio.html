@@ -10,7 +10,7 @@
 
     <div class="menu">
         <button class="menu-button">Inicio</button>
-        <button class="menu-button">Agenda</button>
+        <button class="menu-button" onclick="openAgenda()">Agenda</button> <!-- Updated onclick attribute -->
         <button class="menu-button" onclick="scrollToLocation('#ubicacion')">Ubicación</button>
         <button class="menu-button">Información</button>
     </div>
@@ -63,6 +63,9 @@
         
         function openNuevaPagina() {
             window.open("nueva_pagina.html", "_blank");
+        }
+        function openAgenda() {
+            window.open("agenda.html", "_blank");
         }
     </script>
 </body>
