@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1 class="header-text">Clinica</h1>
+    </div>
+
+    <div class="menu">
+        <button class="menu-button" onclick="openindex()">Inicio</button>
+        <button class="menu-button">Agenda</button>
+        <button class="menu-button" onclick="openindex(ubicacion)">Ubicación</button>
+        <button class="menu-button">Información</button>
+    </div>
+
+    <ol style="--length: 5" role="list">
+        <li style="--i: 1">
+            <h3>Procedimiento 1</h3>
+            <p>Información del procedimiento</p>
+        </li>
+        <li style="--i: 2">
+            <h3>Procedimiento 2</h3>
+            <p>Información del procedimiento</p>
+        </li>
+        <li style="--i: 3">
+            <h3>Procedimiento 3</h3>
+            <p>Información del procedimiento</p>
+        </li>
+        <li style="--i: 4">
+            <h3>Procedimiento 4</h3>
+            <p>Información del procedimiento</p>
+        </li>
+        <li style="--i: 5">
+            <h3>Procedimiento 5</h3>
+            <p>Información del procedimiento</p>
+        </li>
+    </ol>
+    
+    <script>
+        function scrollToLocation(location) {
+            document.querySelector(location).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function openindex() {
+            window.open("index.html", "_self");
+        }
+    </script>
+</body>
+</html>
