@@ -19,4 +19,9 @@
                 }, 2000);
             });
         });
+        function toggleClinicInfo(event) {
+            event.preventDefault(); // Evita que se recargue la página al hacer clic en el enlace
+            var clinicInfo = document.getElementById("clinic-info");
+            clinicInfo.style.display = (clinicInfo.style.display === "none") ? "block" : "none";
+        }
         
