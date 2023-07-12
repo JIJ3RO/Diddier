@@ -1,54 +1,384 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
   <title>Medical Centre</title>
   <link rel="stylesheet" href="style.css">
-  <title>Botón de Calendario</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #ffffff;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+    
+    .container {
+      width: 400px;
+      height: 200px;
+      position: relative;
+      perspective: 1000;
+      -webkit-perspective: 1000;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    
+    .card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      transition: transform 1s ease;
+      cursor: pointer;
+    }
+    
+    .back, .front {
+      border-radius: 6px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    
+    .contentfront {
+      width: 100%;
+      height: 100%;
+      float: left;
+      transform: translatez(60px);
+      -webkit-transform: translatez(60px);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      font-family: monospace;
+    }
+    
+    .contentback {
+      width: 100%;
+      height: 100%;
+      float: left;
+      transform: translatez(60px);
+      -webkit-transform: translatez(60px);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+    }
+    
+    .back {
+      transform: rotateY(180deg);
+      background-color: #232227;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    
+    .front {
+      text-transform: uppercase;
+      background-color: #232227;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    
+    .date {
+      height: 100%;
+      width: 130px;
+      float: left;
+      background-color: #828282;
+      border-radius: 0 6px 6px 0;
+      text-align: right;
+      padding: 10px 30px;
+      box-sizing: border-box;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+    }
+    
+    .datecont {
+      height: 100%;
+      transform: translatez(60px) scale(.9);
+      -webkit-transform: translatez(60px) scale(.9);
+    }
+    
+    #date {
+      font-size: 50px;
+      color: #ECECE7;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      float: right;
+    }
+    
+    #day {
+      float: right;
+      font-size: 14px;
+      color: #232227;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+    
+    #month {
+      float: right;
+      font-size: 10px;
+      color: #232227;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+    }
+    
+    .date i {
+      color: #ECECE7;
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+    }
+    
+    .date i:hover {
+      color: #232227;
+      transition: .3s ease;
+    }
+    
+    .month {
+      height: 100%;
+      width: 270px;
+      float: left;
+      padding: 20px 30px;
+      box-sizing: border-box;
+    }
+    
+    .month table {
+      width: 100%;
+    }
+    
+    .orangeTr {
+      color: #828282;
+    }
+    
+    .whiteTr {
+      color: #ECECE7;
+    }
+    
+    .whiteTr th:hover {
+      color: #828282;
+      transition: .3s ease;
+    }
+    
+    .month tr {
+      height: 24px;
+    }
+    
+    .month th {
+      width: 14%;
+      font-size: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+    
+    .flipped {
+      transform: rotateY(-180deg);
+    }
+    
+    .backcontainer {
+      transform-style: preserve-3d;
+      width: calc(100% - 60px);
+      height: calc(100% - 40px);
+      float: left;
+      margin-left: 30px;
+      margin-top: 20px;
+      background-color: #828282;
+      border-radius: 6px;
+      padding: 10px 30px;
+      box-sizing: border-box;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+    }
+    
+    .hora-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .hora h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .hora p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .payment-button {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #828282;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 3cm;
+    }
+    
+    .payment-button:hover {
+      background-color: #828282;
+    }
+  </style>
 </head>
 <body>
- 
-  <h1>General Information</h1>
-  <div class="cuadro">
-    <h2>Informacion del paciente</h2>
-    <p>Aqui podras ver la informacion del paciente.</p>
-    <p>Podras observar los datos del paciente como su historial medico.</p>
+  <div class="header">
+    <h1 class="header-text">Medical Centre</h1>
   </div>
-
-  <div class="cuadro2">
-    <h2>Clinica</h2>
-    <p>en este cuadro se mostrara la informacion de la clinica,</p>
-    <p>Tambien podras ver datos de la clinica.</p>
-  </div>
+  
   <div class="search-container">
-  <form>
-    <input type="search" id="busqueda" name="busqueda" placeholder="Buscar...">
-    <button type="submit">Buscar</button>
-  </form>
-</div>
-  <p>welcome to the medical centre</p>
-  <nav>
-    <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">ubicacion</a></li>
-       
-      </ul>
-  <nav>
-    <div class="container">
-      <form>
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha">
-      </form>
-    </div>
-
-    <div class="hora">
     <form>
-      <label for="hora">Hora:</label>
-      <input type="time" id="hora" name="hora">
+      <input type="search" id="busqueda" name="busqueda" placeholder="Buscar...">
+      <button type="submit">Buscar</button>
     </form>
   </div>
+  
+  <div class="menu">
+    <button class="menu-button">Inicio</button>
+    <button class="menu-button">Productos</button>
+    <button class="menu-button">Servicios</button>
+    <button class="menu-button">Contacto</button>
+    <button class="menu-button">Ubicacion</button>
+  </div>
+
+  <h1 style="text-align:  center;">General Information</h1>
+  
+  <div class="cuadro-container">
+    <div class="cuadro" style="margin-right: 20px;">
+      <h2>Informacion del paciente</h2>
+      <p>Aqui podras ver la informacion del paciente.</p>
+      <p>Podras observar los datos del paciente como su historial medico.</p>
+    </div>
+  
+    <div class="cuadro" style="margin-left: 20px;">
+      <h2>Clinica</h2>
+      <p>En este cuadro se mostrara la informacion de la clinica.</p>
+      <p>Tambien podras ver datos de la clinica.</p>
+    </div>
+  </div>
+  
+  <div class="calendario-container">
+    <div class="container">
+      <div class="card">
+        <div class="front">
+          <div class="contentfront">
+            <div class="month">
+              <table>
+                <tr class="orangeTr">
+                  <th>M</th>
+                  <th>T</th>
+                  <th>W</th>
+                  <th>T</th>
+                  <th>F</th>
+                  <th>S</th>
+                  <th>S</th>
+                </tr>
+                <tr class="whiteTr">
+                  <th></th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th>6</th>
+                </tr>
+                <tr class="whiteTr">
+                  <th>7</th>
+                  <th>8</th>
+                  <th>9</th>
+                  <th>10</th>
+                  <th>11</th>
+                  <th>12</th>
+                  <th>13</th>
+                </tr>
+                <tr class="whiteTr">
+                  <th>14</th>
+                  <th>15</th>
+                  <th>16</th>
+                  <th>17</th>
+                  <th>18</th>
+                  <th>19</th>
+                  <th>20</th>
+                </tr>
+                <tr class="whiteTr">
+                  <th>21</th>
+                  <th>22</th>
+                  <th>23</th>
+                  <th>24</th>
+                  <th>25</th>
+                  <th>26</th>
+                  <th>27</th>
+                </tr>
+                <tr class="whiteTr">
+                  <th>28</th>
+                  <th>29</th>
+                  <th>30</th>
+                  <th>31</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </table>
+            </div>
+            <div class="date">
+              <div class="datecont">
+                <div id="date"></div>
+                <div id="day"></div>
+                <div id="month"></div>
+                <i class="fa fa-pencil edit" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="back">
+          <div class="contentback">
+            <div class="backcontainer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hora-container">
+    <div class="hora">
+      <h2>Hora actual</h2>
+      <p id="hora-actual"></p>
+    </div>
+  </div>
+  
+  <script>
+    // Obtener la hora actual
+    function obtenerHoraActual() {
+      var fecha = new Date();
+      var hora = fecha.getHours();
+      var minutos = fecha.getMinutes();
+
+      // Agregar un 0 antes de los minutos si es necesario
+      minutos = minutos < 10 ? "0" + minutos : minutos;
+
+      // Mostrar la hora actual en el elemento con id "hora-actual"
+      document.getElementById("hora-actual").innerText = hora + ":" + minutos;
+    }
+
+    // Actualizar la hora cada segundo
+    setInterval(obtenerHoraActual, 1000);
+
+    // Obtener la hora actual al cargar la página
+    obtenerHoraActual();
+  </script>
+
   <button class="payment-button">Realizar Pago</button>
+</body>
 </html>
